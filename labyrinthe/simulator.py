@@ -32,6 +32,10 @@ while True:
         for row in xrange( max( 0, botY-2 ), min( maplenY, botY+3) ):
             discovered_map[row][col]=themap[row][col]
     print '\n'.join( [ ''.join(row) for row in discovered_map ] )
+    sys.stdout.flush()
+    if themap[botY][botX] == '#':
+    	print >> sys.stderr, "Crash!"
+	sys.exit(0)
 
     instr=raw_input()
     if instr=="RIGHT":
