@@ -27,7 +27,7 @@ discovered_map= [ [ '?' ] * len(row) for row in themap ]
 print len(themap), len(themap[0]), alarm
 
 while True:
-    print botX, botY
+    print botY, botX
     for col in xrange( max( 0, botX-2 ), min( maplenX, botX+3 ) ):
         for row in xrange( max( 0, botY-2 ), min( maplenY, botY+3) ):
             discovered_map[row][col]=themap[row][col]
