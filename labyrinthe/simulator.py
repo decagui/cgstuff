@@ -26,7 +26,8 @@ discovered_map= [ [ '?' ] * len(row) for row in themap ]
 
 print len(themap), len(themap[0]), alarm
 
-while True:
+remain=1201
+while remain>=0:
     print botY, botX
     for col in xrange( max( 0, botX-2 ), min( maplenX, botX+3 ) ):
         for row in xrange( max( 0, botY-2 ), min( maplenY, botY+3) ):
@@ -34,8 +35,8 @@ while True:
     print '\n'.join( [ ''.join(row) for row in discovered_map ] )
     sys.stdout.flush()
     if themap[botY][botX] == '#':
-    	print >> sys.stderr, "Crash!"
-	sys.exit(0)
+        print >> sys.stderr, "Crash!"
+        sys.exit(0)
 
     instr=raw_input()
     if instr=="RIGHT":
@@ -46,8 +47,9 @@ while True:
         botY-=1
     elif instr=="DOWN":
         botY+=1
+    remain-=1
 
-
+print >> sys.stderr, "\n\n1200 turns done\n\n"
 
 
  
